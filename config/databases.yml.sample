@@ -1,0 +1,7 @@
+all:
+  doctrine:
+    class: sfDoctrineDatabase
+    param:
+      dsn: 'sqlite:/path/to/db.sqlite'
+      username: root
+      password: null

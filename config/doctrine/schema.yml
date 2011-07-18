@@ -1,0 +1,74 @@
+Member: 
+  actAs: { Timestampable: ~ }
+  columns:
+    firstname: { type: string(255), notnull: true, unique: false }
+    lastname: { type: string(255), notnull: true, unique: false }
+    birth_date: { type: date, notnull: true, unique: false }
+    birth_place: { type: string(255), notnull: false, unique: false }
+    citizenship: { type: string(255), notnull: false, unique: false }
+    address: { type: string(255), notnull: false, unique: false }
+    postcode: { type: string(255), notnull: false, unique: false }
+    city: { type: string(255), notnull: false, unique: false }
+    ssn: { type: string(255), notnull: false, unique: false }
+    insurance: { type: string(255), notnull: false, unique: false }
+    phone: { type: string(255), notnull: false, unique: false }
+    mobile: { type: string(255), notnull: false, unique: false }
+    email: { type: string(255), notnull: false, unique: false }
+    job: { type: string(255), notnull: false, unique: false }
+    created_at: { type: timestamp, notnull: true }
+    updated_at: { type: timestamp, notnull: true }
+
+Membership:
+  actAs: { Timestampable: ~ }
+  columns:
+    member_id: { type: integer, notnull: true, unique: false }
+    season_id: { type: integer, notnull: true, unique: false }
+    membership_type_id: { type: integer, notnull: true, unique: false }
+    membership_status_id: { type: integer, notnull: true, unique: false }
+    created_at: { type: timestamp, notnull: true }
+    updated_at: { type: timestamp, notnull: true }
+  indexes:
+      unique_membership:  { fields: [member_id, season_id], type: unique }
+  relations:
+    Member:
+      onDelete: CASCADE
+      local: member_id
+      foreign: id
+      foreignAlias: Memberships
+    Season:
+      onDelete: CASCADE
+      local: season_id
+      foreign: id
+      foreignAlias: Memberships
+    MembershipType:
+      onDelete: CASCADE
+      local: membership_type_id
+      foreign: id
+      foreignAlias: Memberships
+    MembershipStatus:
+      onDelete: CASCADE
+      local: membership_status_id
+      foreign: id
+      foreignAlias: Memberships
+
+Season:
+  actAs: { Timestampable: ~ }
+  columns:
+    year: { type: integer, notnull: true, unique: true }
+    created_at: { type: timestamp, notnull: true }
+    updated_at: { type: timestamp, notnull: true }
+    
+MembershipType:
+  actAs: { Timestampable: ~ }
+  columns:
+    name: { type: string(255), notnull: true, unique: true }
+    price: { type: integer, notnull: true, unique: false }
+    created_at: { type: timestamp, notnull: true }
+    updated_at: { type: timestamp, notnull: true }
+
+MembershipStatus:
+  actAs: { Timestampable: ~ }
+  columns:
+    name: { type: string(255), notnull: true, unique: true }
+    created_at: { type: timestamp, notnull: true }
+    updated_at: { type: timestamp, notnull: true }
