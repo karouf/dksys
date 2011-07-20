@@ -1,0 +1,56 @@
+Member:
+  renaud:
+    firstname: Brandon
+    lastname: Jacobs
+    birth_date: '1982-07-06'
+    birth_place: USA
+    citizenship: US
+    address: 1, Trucker Drive
+    postcode: 11211
+    city: Brooklyn, NYC
+    ssn: 01234567890
+    insurance: Geico
+    phone:
+    mobile: 0123456789 
+    email: b.jacobs@nygiants.com
+    job: football player
+    created_at: '2011-07-19 17:33:00'
+    updated_at: '2011-07-19 17:33:00'
+
+Season:
+  2011:
+    year: 2011
+    created_at: '2011-07-19 17:33:00'
+    updated_at: '2011-07-19 17:33:00'
+    
+MembershipType:
+  senior:
+    name: Football Sénior
+    price: 81
+    created_at: '2011-07-19 17:33:00'
+    updated_at: '2011-07-19 17:33:00'
+  junior:
+    name: Football Junior
+    price: 51
+    created_at: '2011-07-19 17:33:00'
+    updated_at: '2011-07-19 17:33:00'
+
+MembershipStatus:
+  encours:
+    name: En cours
+    created_at: '2011-07-19 17:33:00'
+    updated_at: '2011-07-19 17:33:00'
+  paye:
+    name: Payé
+    created_at: '2011-07-19 17:33:00'
+    updated_at: '2011-07-19 17:33:00'
+
+Membership:
+  membership:
+    Member: renaud
+    Season: 2011
+    MembershipType: senior
+    MembershipStatus: paye
+    created_at: '2011-07-19 17:33:00'
+    updated_at: '2011-07-19 17:33:00'
+
