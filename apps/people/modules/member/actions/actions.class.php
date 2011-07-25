@@ -42,6 +42,7 @@ class memberActions extends sfActions
   public function executeEdit(sfWebRequest $request)
   {
     $this->forward404Unless($member = Doctrine_Core::getTable('Member')->find(array($request->getParameter('id'))), sprintf('Object member does not exist (%s).', $request->getParameter('id')));
+    $this->member = $member;
     $this->form = new MemberForm($member);
   }
 

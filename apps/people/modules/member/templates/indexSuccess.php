@@ -1,4 +1,6 @@
-<h1>Members List</h1>
+<?php slot('section_title') ?>
+Members List
+<?php end_slot() ?>
 
 <table>
   <thead>

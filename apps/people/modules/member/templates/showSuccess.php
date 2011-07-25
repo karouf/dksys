@@ -1,3 +1,7 @@
+<?php slot('section_title') ?>
+Member <?php echo $member->getFirstname() ?> <?php echo $member->getLastname() ?>
+<?php end_slot() ?>
+
 <table>
   <tbody>
     <tr>
